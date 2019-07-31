@@ -1,0 +1,14 @@
+load("@io_bazel_rules_scala//scala:scala.bzl", "scala_library")
+
+scala_library(
+    name="src",
+    visibility = ["//visibility:public"],
+    srcs=glob(["**/*.scala"]),
+
+    plugins = [
+        "//divbyzero-plugin/src:src"
+    ],
+
+    deps = [
+    ]
+)
