@@ -3,12 +3,9 @@ load("@io_bazel_rules_scala//scala:scala.bzl", "scala_library")
 scala_library(
     name="src",
     visibility = ["//visibility:public"],
-    srcs=glob(["**/*.scala"]),
-
+    srcs = glob(["**/*.scala"]),
     plugins = [
-        "//divbyzero-plugin/src:src"
+        "//divbyzero-plugin/src:src.jar",
+#        "@org_psywerx_hairyfotr_linter_2_11//jar",
     ],
-
-    deps = [
-    ]
 )

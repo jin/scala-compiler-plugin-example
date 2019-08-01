@@ -1,11 +1,11 @@
-load("@io_bazel_rules_scala//scala:scala.bzl", "scala_library")
+load("@io_bazel_rules_scala//scala:scala.bzl", "scala_library_for_plugin_bootstrapping")
 
-scala_library(
-    name="src",
+scala_library_for_plugin_bootstrapping(
+    name = "src",
     visibility = ["//visibility:public"],
-    srcs=glob(["**/*.scala"]),
-
-    deps=[
-        "//external:io_bazel_rules_scala/dependency/scala/scala_compiler"
+    resources = ["resources/scalac-plugin.xml"],
+    srcs = glob(["**/*.scala"]),
+    deps = [
+        "//external:io_bazel_rules_scala/dependency/scala/scala_compiler",
     ]
 )
