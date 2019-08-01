@@ -6,6 +6,5 @@ scala_library(
     srcs = glob(["**/*.scala"]),
     plugins = [
         "//divbyzero-plugin/src:src.jar",
-#        "@org_psywerx_hairyfotr_linter_2_11//jar",
     ],
 )
